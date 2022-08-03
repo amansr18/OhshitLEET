@@ -1,4 +1,7 @@
-    int tribonacci(int n) {
+https://leetcode.com/problems/n-th-tribonacci-number/
+
+
+int tribonacci(int n) {
         int dp[3]={0,1,1};
     
     //After given numbers calculate next Tribonacci number
