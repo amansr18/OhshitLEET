@@ -2,6 +2,7 @@ Approach :
 
 First, think about the case p = 3 & q = 2.
 image
+![image](https://user-images.githubusercontent.com/87056328/182789549-9452bff5-264c-43be-8985-f8fcf79a2377.png)
 
 So, this problem can be transformed into finding m * p = n * q, where
 m = the number of room extension + 1.
