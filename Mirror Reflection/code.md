@@ -31,17 +31,6 @@ m is odd & n is even => return 2.
 Note: The case m is even & n is even is impossible. Because in the equation m * q = n * p, if m and n are even, we can divide both m and n by 2. Then, m or n must be odd.
 
 --
-Because we want to find m * p = n * q, where either m or n is odd, we can do it this way.
+Because we want to find m * p = n * q, where either m or n is odd, we can do it this way.(code.cpp)
 
-C++ :
 
-class Solution {
-public:
-    int mirrorReflection(int p, int q) {
-        while (p % 2 == 0 && q % 2 == 0){ 
-            p/=2;
-            q/=2;
-        }
-        return 1 - p % 2 + q % 2;
-    }
-};
