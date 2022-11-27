@@ -2,21 +2,28 @@ class Solution {
 public:
     int trap(vector<int>& height) {
         int n = height.size();
-        vector<int> pref_max(n),suf_max(n);
-        int maxi=0;
-        for(int i=0;i<n;i++){
-           pref_max[i]=max(maxi, height[i]);
-           maxi = pref_max[i];
+        int left=0, right=n-1;
+        int res=0;
+        int leftmax=0, rightmax=0;
+        
+        while(left<=right){
+            if(height[left]<=height[right]){
+                if(leftmax<height[left]){
+                     leftmax=height[left];
+                }
+                else res += (leftmax-height[left]);
+                left++;
+            }
+            else{
+                if(height[right]>rightmax){
+                    rightmax=height[right];
+                }
+                else {
+                    res+= rightmax-height[right];
+                }
+                right--;
+            }
         }
-        maxi=0;
-        for(int i=n-1;i>=0;i--){
-            suf_max[i]=max(maxi,height[i]);
-            maxi = suf_max[i];
-        }
-        int ans=0;
-        for(int i=0;i<n;i++){
-            ans += min(pref_max[i], suf_max[i]) - height[i];
-        }
-        return ans;
+        return res;
     }
 };
