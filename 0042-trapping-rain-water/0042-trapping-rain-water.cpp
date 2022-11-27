@@ -17,7 +17,6 @@ public:
         for(int i=0;i<n;i++){
             ans += min(pref_max[i], suf_max[i]) - height[i];
         }
-        cout<<suf_max[n-1];
         return ans;
     }
 };
