@@ -23,9 +23,6 @@ class Solution
 	                q.push({{i,j}, 0});
 	                vis[i][j]=1;
 	            }
-	            else{
-	                vis[i][j]=0;
-	            }
 	        }
 	    }
 	    int delrow[] = {0,-1,0,1};
