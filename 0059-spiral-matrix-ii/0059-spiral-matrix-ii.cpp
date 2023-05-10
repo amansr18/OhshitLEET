@@ -6,7 +6,7 @@ public:
         int val=1;
         int r1=0, c1=0, r2=n-1, c2=n-1;
         
-        for (int min = 0; min < n / 2; ++min) {
+        for (int i = 0; i < n / 2; ++i) {
             for(int i=c1; i<=c2; i++){
                 matrix[r1][i]=val++;
             }
