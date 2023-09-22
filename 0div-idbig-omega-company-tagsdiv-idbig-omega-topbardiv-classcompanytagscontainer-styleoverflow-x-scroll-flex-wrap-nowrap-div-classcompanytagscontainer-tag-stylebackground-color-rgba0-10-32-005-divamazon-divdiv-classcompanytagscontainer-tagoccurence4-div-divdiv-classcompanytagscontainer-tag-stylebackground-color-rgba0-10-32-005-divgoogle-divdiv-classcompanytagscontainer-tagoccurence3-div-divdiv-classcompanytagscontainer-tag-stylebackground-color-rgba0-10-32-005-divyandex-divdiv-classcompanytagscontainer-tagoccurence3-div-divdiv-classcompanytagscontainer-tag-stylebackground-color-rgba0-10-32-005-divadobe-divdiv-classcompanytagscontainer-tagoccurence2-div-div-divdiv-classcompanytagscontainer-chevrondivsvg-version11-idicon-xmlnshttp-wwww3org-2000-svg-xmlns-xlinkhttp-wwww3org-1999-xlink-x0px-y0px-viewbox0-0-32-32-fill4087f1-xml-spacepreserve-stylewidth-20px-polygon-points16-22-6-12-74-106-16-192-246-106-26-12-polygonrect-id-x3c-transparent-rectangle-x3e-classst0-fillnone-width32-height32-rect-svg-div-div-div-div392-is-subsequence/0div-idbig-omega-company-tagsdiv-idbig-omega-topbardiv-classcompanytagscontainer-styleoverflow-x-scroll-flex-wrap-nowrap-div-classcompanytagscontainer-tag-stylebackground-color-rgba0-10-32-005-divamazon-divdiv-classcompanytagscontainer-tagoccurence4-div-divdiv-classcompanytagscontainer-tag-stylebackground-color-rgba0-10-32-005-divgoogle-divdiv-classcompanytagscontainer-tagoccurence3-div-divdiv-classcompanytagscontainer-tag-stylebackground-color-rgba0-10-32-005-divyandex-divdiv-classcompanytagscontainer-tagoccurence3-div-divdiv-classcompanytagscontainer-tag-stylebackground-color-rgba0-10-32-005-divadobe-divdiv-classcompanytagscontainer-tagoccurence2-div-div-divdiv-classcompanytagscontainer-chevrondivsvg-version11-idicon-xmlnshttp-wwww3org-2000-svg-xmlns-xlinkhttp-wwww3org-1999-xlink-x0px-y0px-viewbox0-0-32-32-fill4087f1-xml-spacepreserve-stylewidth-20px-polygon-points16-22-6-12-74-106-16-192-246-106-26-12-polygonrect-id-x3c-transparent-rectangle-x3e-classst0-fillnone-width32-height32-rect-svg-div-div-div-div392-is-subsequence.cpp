@@ -1,30 +1,31 @@
 class Solution {
-    void solve(string s, string t, int i,int j, int last, bool &ans){
-        if(s.size()==0){
+    void solve(string s, string t, int i,int j, bool &ans, int m, int n){
+        if(m==0){
             ans=true;
             return;
         }
         if(s[i]==t[j]){
-            if(i==s.size()-1){
+            if(i==m-1){
                 ans = true;
                 return;
             }
-            last = j;
-            if(i+1 < s.size() && j+1 < t.size()){
-                solve(s,t,i+1, j+1,last,ans);
+            if(i+1 < m && j+1 < n){
+                solve(s,t,i+1, j+1,ans,m,n);
             }
         }
         else{
-            if(j+1 < t.size()){
-                solve(s,t,i, j+1,last,ans);
+            if(j+1 < n){
+                solve(s,t,i, j+1,ans,m,n);
             }
         }
     }
 public:
     bool isSubsequence(string s, string t) {
-        int i=0,j=0,last=0;
+        int m = s.size(), n = t.size();
+        int i=0,j=0;
         bool ans=false;
-        solve(s,t,i,j,last,ans);
+        
+        solve(s,t,i,j,ans, m, n);
         return ans;
     }
 };
